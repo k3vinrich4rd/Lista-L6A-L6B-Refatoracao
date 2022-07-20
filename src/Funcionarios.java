@@ -1,2 +1,3 @@
-package PACKAGE_NAME;public class Funcionarios {
+public abstract class Funcionarios {
+
 }

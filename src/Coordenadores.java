@@ -25,9 +25,9 @@ public class Coordenadores extends Funcionarios {
     @Override
     public String toString() {
         System.out.println();
-        System.out.println("------------------------------");
-        System.out.println("Informações sobre o coordenador: ");
-        System.out.println("------------------------------");
+        System.out.println("--------------------------------");
+        System.out.println("Informações sobre o coordenador(a): ");
+        System.out.println("--------------------------------");
         return "Nome do coordenador: " + this.getNome() +
                 "\nCpf: " + this.getCpf() + "\nNúmero de registro " + this.getNumeroDeRegistro() +
                 "\nOrgão de lotação: " + this.getOrgaoDeLotacao() + "\nSalário: " + this.getSalario() +

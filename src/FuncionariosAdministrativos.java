@@ -26,10 +26,14 @@ public class FuncionariosAdministrativos extends Funcionarios {
 
     @Override
     public String toString() {
-        return "Nome do professor: " + this.getNome() +
+        System.out.println("------------------------------------------------");
+        System.out.println("Informações sobre o Funcionário administrativo: ");
+        System.out.println("------------------------------------------------");
+        return "Nome: " + this.getNome() +
                 "\nCpf: " + this.getCpf() + "\nNúmero de registro " + this.getNumeroDeRegistro() +
                 "\nOrgão de lotação: " + this.getOrgaoDeLotacao() + "\nSalário: " + this.getSalario() +
                 "\nFunção administrativa: " + this.getFuncaoAdministrativa() +
-                "\nSenioridade: " + this.getFuncaoAdministrativa();
+                "\nAumento de salário no valor de 10%: R$ " + this.aumentarSalario() +
+                "\nSenioridade: " + this.getSenioridade();
     }
 }

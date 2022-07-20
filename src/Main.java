@@ -8,10 +8,14 @@ public class Main {
         turmas.add("Turma F");
         turmas.add("Turma G");
 
+        List<String> estagiarios = new ArrayList<>();
 
         Professor professor = new Professor("Norberto", "333.333.333 - 33",
                 "333.333.333 - 33", "Secretária da educação - Sp", 2000,
                 "Mestre em química", "Química", 125, 5, turmas);
+
+
+
         professor.adicionarTurma("Turma H");
         System.out.println(professor.toString());
         // Problema Resolvido.

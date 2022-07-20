@@ -19,6 +19,7 @@ public class Professor extends Funcionarios {
         this.quantidadeDeAlunos = quantidadeDeAlunos;
         this.quantidadeDeTurmas = quantidadeDeTurmas;
         this.listaDeTurmas = listaDeTurmas;
+
     }
 
     @Override
@@ -35,13 +36,14 @@ public class Professor extends Funcionarios {
         return listaDeTurmas;
     }
 
-    private String getInformacoesListasTurmas(){
-        String informacoesListasTurma = "";
-      for (String info: listaDeTurmas){
-          informacoesListasTurma = "," + info;
-      }
-      return informacoesListasTurma;
+    private String getInformacoesListasTurmas() {
+        String informacoesListasTurma = ",";
+        for (String info : listaDeTurmas) {
+            informacoesListasTurma = "," + info;
+        }
+        return informacoesListasTurma;
     }
+
 
     public void setListaDeTurmas(List<String> listaDeTurmas) {
         this.listaDeTurmas = listaDeTurmas;

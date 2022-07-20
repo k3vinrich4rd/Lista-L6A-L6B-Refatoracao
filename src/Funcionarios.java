@@ -1,3 +1,6 @@
+import java.util.Collections;
+import java.util.List;
+
 public abstract class Funcionarios {
     private String nome;
     private String cpf;
@@ -18,7 +21,7 @@ public abstract class Funcionarios {
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public void setNome(String nome) {

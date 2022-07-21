@@ -8,6 +8,34 @@ public class FuncionariosAdministrativos extends Funcionarios {
         this.senioridade = senioridade;
     }
 
+    @Override
+    public String toString() {
+        System.out.println("--------------------------------------------------");
+        System.out.println("Informações sobre o Funcionário(a) Administrativo: ");
+        System.out.println("---------------------------------------------------");
+        return "Nome do Funcionário(a): " + this.getNome() +
+                "\nCpf: " + this.getCpf() +
+                "\nNúmero de registro: " + this.getNumeroDeRegistro() +
+                "\nOrgão de lotação: " + this.getOrgaoDeLotacao() +
+                "\nSalário: " + this.getSalario() +
+                "\nFunção Administrativa: " + this.getFuncaoAdministrativa() +
+                "\nSenioridade: " + this.getSenioridade();
+
+    }
+
+    @Override
+    public void reembolsoDespesas() {
+
+    }
+
+    @Override
+    public void aumentoDeSalario() {
+        System.out.println();
+        double aumento = this.getSalario() * 0.1;
+        System.out.println("O aumento feito em seu salário foi de 10% : R$ " + aumento);
+
+    }
+
     public String getFuncaoAdministrativa() {
         return funcaoAdministrativa;
     }
@@ -24,16 +52,5 @@ public class FuncionariosAdministrativos extends Funcionarios {
         this.senioridade = senioridade;
     }
 
-    @Override
-    public String toString() {
-        System.out.println("------------------------------------------------");
-        System.out.println("Informações sobre o Funcionário administrativo: ");
-        System.out.println("------------------------------------------------");
-        return "Nome: " + this.getNome() +
-                "\nCpf: " + this.getCpf() + "\nNúmero de registro " + this.getNumeroDeRegistro() +
-                "\nOrgão de lotação: " + this.getOrgaoDeLotacao() + "\nSalário: " + this.getSalario() +
-                "\nFunção administrativa: " + this.getFuncaoAdministrativa() +
-                "\nAumento de salário no valor de 10%: R$ " + this.aumentarSalario() +
-                "\nSenioridade: " + this.getSenioridade();
-    }
+
 }

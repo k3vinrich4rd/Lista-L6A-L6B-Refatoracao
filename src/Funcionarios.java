@@ -1,7 +1,7 @@
 import java.util.Collections;
 import java.util.List;
 
-public abstract class Funcionarios {
+public abstract class Funcionarios implements MetodosEspeciais{
     private String nome;
     private String cpf;
     private String numeroDeRegistro;
@@ -16,9 +16,11 @@ public abstract class Funcionarios {
         this.salario = salario;
     }
 
-    public int aumentarSalario() {
+
+
+    /*public int aumentarSalario() {
         return (int) (salario = this.salario * 0.1);
-    }
+    }*/
 
     public String getNome() {
         return this.nome;

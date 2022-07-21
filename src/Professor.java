@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Professor extends Funcionarios {
     private List<String> listaDeTurmas = new ArrayList<>();
-
     private String nivelDeGraduacao;
     private String disciplinaMinistrada;
     private int quantidadeDeAlunos;
@@ -19,6 +18,7 @@ public class Professor extends Funcionarios {
         this.quantidadeDeAlunos = quantidadeDeAlunos;
         this.quantidadeDeTurmas = quantidadeDeTurmas;
         this.listaDeTurmas = listaDeTurmas;
+
 
     }
 
@@ -80,6 +80,7 @@ public class Professor extends Funcionarios {
     public void setQuantidadeDeTurmas(int quantidadeDeTurmas) {
         this.quantidadeDeTurmas = quantidadeDeTurmas;
     }
+
 
     @Override
     public String toString() {

@@ -38,6 +38,11 @@ public class Main {
                 3000, "Organização", "6 anos de experiência");
         System.out.println(funcionariosAdministrativos.toString());
 
+        Estagiario estagiario = new Estagiario("Ragnar",100,500);
+        System.out.println(estagiario.toString());
+        estagiario.reembolso();
+
+
 
     }
 

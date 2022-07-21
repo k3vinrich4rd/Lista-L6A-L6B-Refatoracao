@@ -1,22 +1,30 @@
 import java.util.List;
 
-public class Estagiario extends Professor {
+public class Estagiario {
+
+
     private double bolsaAuxilio;
     private double despesas;
+    private String nome;
 
-    public Estagiario(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario, String nivelDeGraduacao, String disciplinaMinistrada, int quantidadeDeAlunos, int quantidadeDeTurmas, List<String> listaDeTurmas) {
-        super(nome, cpf, numeroDeRegistro, orgaoDeLotacao, salario, nivelDeGraduacao, disciplinaMinistrada, quantidadeDeAlunos, quantidadeDeTurmas, listaDeTurmas);
+    public Estagiario(String nome,double bolsaAuxilio, double despesas) {
+        this.bolsaAuxilio = bolsaAuxilio;
+        this.despesas = despesas;
+        this.nome = nome;
     }
 
-    public void reembolso(){
-        if (despesas < 100){
-            System.out.println("Solicitação de reembolso aprovada");
-        }else {
-            System.out.println("Solicitação de reeembolso reprovada");
+    public void reembolso() {
+        if (despesas < bolsaAuxilio) {
+            System.out.println("Reembolso aprovado");
+        } else {
+            System.out.println("Reembolso reprovado, você ultrapassou o limite de gastos ");
         }
+
     }
-    public void despesas(){
-        double valorDespesas = this.bolsaAuxilio;
+
+
+    public void depesas() {
+        double despesas = this.bolsaAuxilio;
     }
 
     public double getBolsaAuxilio() {
@@ -33,6 +41,24 @@ public class Estagiario extends Professor {
 
     public void setDespesas(double despesas) {
         this.despesas = despesas;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    @Override
+    public String toString() {
+        System.out.println("------------------------------");
+        System.out.println("Informações sobre o estagiário: ");
+        System.out.println("------------------------------");
+        return "Nome do estagiário: "  + getNome() +
+                "\nValor bolsa auxilio: " + getBolsaAuxilio() +
+                "\nValor das despesas: " + getDespesas();
     }
 }
 

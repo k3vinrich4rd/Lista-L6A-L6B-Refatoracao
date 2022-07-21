@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public interface MetodosEspeciais {
+public interface MetodosEspeciais {
+    public abstract void reembolsoDespesas();
+    public abstract void aumentoDeSalario();
+
 }

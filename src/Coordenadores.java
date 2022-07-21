@@ -6,33 +6,38 @@ public class Coordenadores extends Funcionarios {
 
     private List<String> professoresSupervisionados = new ArrayList<>();
 
-    public Coordenadores(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario, List<String> professoresSupervisionados) {
+    public Coordenadores(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario) {
         super(nome, cpf, numeroDeRegistro, orgaoDeLotacao, salario);
-        this.professoresSupervisionados = professoresSupervisionados;
     }
-
-    public void adiconarProfessor(){
-
-    }
-
-
-    @Override
-    public int aumentarSalario() {
-        return (int) (this.getSalario() * 0.05);
-    }
-
 
     @Override
     public String toString() {
+        System.out.println("---------------------------------");
+        System.out.println("Informações sobre o coordenador: ");
+        System.out.println("---------------------------------");
+        return "Nome do(a) coordenador(a): " + getNome() +
+                "\nCpf: " + getCpf() +
+                "\nNúmero de registro: " + getNumeroDeRegistro() +
+                "\nOrgão de lotação: " + getOrgaoDeLotacao() +
+                "\nSalário antes do aumento: R$" + getSalario() +
+                "\nProfessores supervisionados: " + getProfessoresSupervisionados();
+
+    }
+
+    public void adiconarProfessor(String professor) {
+        this.professoresSupervisionados.add(professor);
+    }
+
+    @Override
+    public void reembolsoDespesas() {
+
+    }
+
+    @Override
+    public void aumentoDeSalario() {
         System.out.println();
-        System.out.println("--------------------------------");
-        System.out.println("Informações sobre o coordenador(a): ");
-        System.out.println("--------------------------------");
-        return "Nome do coordenador: " + this.getNome() +
-                "\nCpf: " + this.getCpf() + "\nNúmero de registro " + this.getNumeroDeRegistro() +
-                "\nOrgão de lotação: " + this.getOrgaoDeLotacao() + "\nSalário: " + this.getSalario() +
-                "\nProfessores Supervisionados " + this.getProfessoresSupervisionados() +
-                "\nAumento de salário no valor de 5%: R$" + aumentarSalario() + "\n";
+        double aumento = this.getSalario() * 0.05;
+        System.out.println("O aumento feito em seu salário foi de 5%: R$ " + aumento);
 
     }
 
@@ -44,7 +49,5 @@ public class Coordenadores extends Funcionarios {
         this.professoresSupervisionados = professoresSupervisionados;
     }
 
-    public void adicionarProfessor(Professor listaDeProfessores) {
-        this.professoresSupervisionados = (List<String>) listaDeProfessores;
-    }
+
 }

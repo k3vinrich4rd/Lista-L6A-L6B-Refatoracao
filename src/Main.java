@@ -30,51 +30,64 @@ public class Main {
 
         Professor professor1 = new Professor("Mario", "437.873.123 - 65",
                 "424.398.323 - 31", "Secretária da educação - Sp", 2000,
-                "Doutor em Geografia", "Geografia", 100, 5,1);
+                "Doutor em Geografia", "Geografia", 100, 5,1,1500.0);
 
         professor1.adicionarTurma(turmas1.getNome());
         professor1.adicionarEstagiario(estagiario1.getNome());
         System.out.println(professor1.toString());
         professor1.aumentoDeSalario();
+        professor1.reembolsoDespesas();
         System.out.println();
 
 
         Professor professor2 = new Professor("Norberto", "543.766.323 - 12",
                 "356.783.545 - 36", "Secretária da educação - Sp", 3000,
-                "Doutor em Química", "Química", 125, 4,1);
+                "Doutor em Química", "Química", 125, 4,1,4000.0);
 
         professor2.adicionarTurma(turmas2.getNome());
         professor2.adicionarEstagiario(estagiario2.getNome());
         System.out.println(professor2.toString());
         professor2.aumentoDeSalario();
+        professor2.reembolsoDespesas();
         System.out.println();
 
 
         Coordenadores coordenadores1 = new Coordenadores("Ilda", "435.434.343 - 54",
-                "332.432.212 - 20", "Secretária da educação - Sp", 3000);
+                "332.432.212 - 20", "Secretária da educação - Sp", 3000, 1000);
         coordenadores1.adiconarProfessor(professor1.getNome());
         System.out.println(coordenadores1.toString());
         coordenadores1.aumentoDeSalario();
+        coordenadores1.reembolsoDespesas();
         System.out.println();
 
         Coordenadores coordenadores2 = new Coordenadores("Nilza", "435.888.343 - 54",
-                "986.321.500 - 44", "Secretária da educação - Sp", 3000);
+                "986.321.500 - 44", "Secretária da educação - Sp", 3000,5000);
         coordenadores2.adiconarProfessor(professor2.getNome());
         System.out.println(coordenadores2.toString());
         coordenadores2.aumentoDeSalario();
+        coordenadores2.reembolsoDespesas();
         System.out.println();
 
 
 
 
-        FuncionariosAdministrativos funcionariosAdministrativos = new FuncionariosAdministrativos("Gabriel",
-                "462.092.442. - 11", "111.764.095 - 11", "Secretária de educação - Sp",
-                3000, "Organização", "6 anos de experiência");
+        FuncionariosAdministrativos funcionariosAdministrativos1 = new FuncionariosAdministrativos("Gabriela",
+                "500.092.322 - 11", "111.764.095 - 11", "Secretária de educação - Sp",
+                3000, "Organização", "6 anos de experiência",2500);
 
-        System.out.println(funcionariosAdministrativos.toString());
-        funcionariosAdministrativos.aumentoDeSalario();
+        System.out.println(funcionariosAdministrativos1.toString());
+        funcionariosAdministrativos1.aumentoDeSalario();
+        funcionariosAdministrativos1.reembolsoDespesas();
         System.out.println();
 
+        FuncionariosAdministrativos funcionariosAdministrativos2 = new FuncionariosAdministrativos("Leticia",
+                "462.092.442 - 11", "111.765.313 - 56", "Secretária de educação - Sp",
+                3000, "Organização", "6 anos de experiência",5000);
+
+        System.out.println(funcionariosAdministrativos2.toString());
+        funcionariosAdministrativos2.aumentoDeSalario();
+        funcionariosAdministrativos2.reembolsoDespesas();
+        System.out.println();
 
     }
 

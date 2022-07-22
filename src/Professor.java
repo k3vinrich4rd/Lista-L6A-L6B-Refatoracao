@@ -10,12 +10,14 @@ public class Professor extends Funcionarios {
     private int quantidadeDeAlunos;
     private int quantidadeDeTurmas;
     private int quantidadeDeEstagiarios;
+    private double gastos;
 
-    public Professor(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario, String nivelDeGraduacao, String disciplinaMinistrada, int quantidadeDeAlunos, int quantidadeDeTurmas, int quantidadeDeEstagiarios) {
+    public Professor(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario, String nivelDeGraduacao, String disciplinaMinistrada, int quantidadeDeAlunos, int quantidadeDeTurmas, int quantidadeDeEstagiarios, double gastos) {
         super(nome, cpf, numeroDeRegistro, orgaoDeLotacao, salario);
         this.nivelDeGraduacao = nivelDeGraduacao;
         this.disciplinaMinistrada = disciplinaMinistrada;
         this.quantidadeDeAlunos = quantidadeDeAlunos;
+        this.gastos = gastos;
 
     }
 
@@ -28,7 +30,8 @@ public class Professor extends Funcionarios {
                 "\nCpf: " + this.getCpf() +
                 "\nNúmero de registro: " + this.getNumeroDeRegistro() +
                 "\nOrgão de lotação: " + this.getOrgaoDeLotacao() +
-                "\nSalário antes do aumento: R$ " + this.getSalario() +
+                "\nSalário: R$ " + this.getSalario() +
+                "\nGastos: " + getGastos() +
                 "\nNível de graduação: " + this.getNivelDeGraduacao() +
                 "\nDisciplina Ministrada: " + this.getDisciplinaMinistrada() +
                 "\nQuantidade de alunos: " + this.getQuantidadeDeAlunos() +
@@ -52,7 +55,11 @@ public class Professor extends Funcionarios {
 
     @Override
     public void reembolsoDespesas() {
-
+        if(getGastos() < getSalario()){
+            System.out.println("O seu reembolso foi aprovado");
+        }else {
+            System.out.println("O seu reembolso foi reprovado");
+        }
     }
 
     @Override
@@ -119,6 +126,12 @@ public class Professor extends Funcionarios {
         this.quantidadeDeEstagiarios = quantidadeDeEstagiarios;
     }
 
+    public double getGastos() {
+        return gastos;
+    }
 
+    public void setGastos(double gastos) {
+        this.gastos = gastos;
+    }
 }
 

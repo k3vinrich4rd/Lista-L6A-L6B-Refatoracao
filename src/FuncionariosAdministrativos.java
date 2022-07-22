@@ -1,11 +1,13 @@
 public class FuncionariosAdministrativos extends Funcionarios {
     private String funcaoAdministrativa;
     private String senioridade;
+    private double gastos;
 
-    public FuncionariosAdministrativos(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario, String funcaoAdministrativa, String senioridade) {
+    public FuncionariosAdministrativos(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario, String funcaoAdministrativa, String senioridade, double gastos) {
         super(nome, cpf, numeroDeRegistro, orgaoDeLotacao, salario);
         this.funcaoAdministrativa = funcaoAdministrativa;
         this.senioridade = senioridade;
+        this.gastos = gastos;
     }
 
     @Override
@@ -18,6 +20,7 @@ public class FuncionariosAdministrativos extends Funcionarios {
                 "\nNúmero de registro: " + this.getNumeroDeRegistro() +
                 "\nOrgão de lotação: " + this.getOrgaoDeLotacao() +
                 "\nSalário: " + this.getSalario() +
+                "\nGastos: " + getGastos() +
                 "\nFunção Administrativa: " + this.getFuncaoAdministrativa() +
                 "\nSenioridade: " + this.getSenioridade();
 
@@ -25,7 +28,11 @@ public class FuncionariosAdministrativos extends Funcionarios {
 
     @Override
     public void reembolsoDespesas() {
-
+        if(getGastos() < getSalario()){
+            System.out.println("O seu reembolso foi aprovado");
+        }else {
+            System.out.println("O seu reembolso foi reprovado");
+        }
     }
 
     @Override
@@ -52,5 +59,11 @@ public class FuncionariosAdministrativos extends Funcionarios {
         this.senioridade = senioridade;
     }
 
+    public double getGastos() {
+        return gastos;
+    }
 
+    public void setGastos(double gastos) {
+        this.gastos = gastos;
+    }
 }

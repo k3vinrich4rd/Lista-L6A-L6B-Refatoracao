@@ -5,9 +5,11 @@ public class Coordenadores extends Funcionarios {
 
 
     private List<String> professoresSupervisionados = new ArrayList<>();
+    private double gastos;
 
-    public Coordenadores(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario) {
+    public Coordenadores(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario, double gastos) {
         super(nome, cpf, numeroDeRegistro, orgaoDeLotacao, salario);
+        this.gastos = gastos;
     }
 
     @Override
@@ -19,7 +21,8 @@ public class Coordenadores extends Funcionarios {
                 "\nCpf: " + getCpf() +
                 "\nNúmero de registro: " + getNumeroDeRegistro() +
                 "\nOrgão de lotação: " + getOrgaoDeLotacao() +
-                "\nSalário antes do aumento: R$" + getSalario() +
+                "\nSalário: R$" + getSalario() +
+                "\nGastos: " + getGastos() +
                 "\nProfessores supervisionados: " + getProfessoresSupervisionados();
 
     }
@@ -30,7 +33,11 @@ public class Coordenadores extends Funcionarios {
 
     @Override
     public void reembolsoDespesas() {
-
+        if(getGastos() < getSalario()){
+            System.out.println("O seu reembolso foi aprovado");
+        }else {
+            System.out.println("O seu reembolso foi reprovado");
+        }
     }
 
     @Override
@@ -49,5 +56,11 @@ public class Coordenadores extends Funcionarios {
         this.professoresSupervisionados = professoresSupervisionados;
     }
 
+    public double getGastos() {
+        return gastos;
+    }
 
+    public void setGastos(double gastos) {
+        this.gastos = gastos;
+    }
 }

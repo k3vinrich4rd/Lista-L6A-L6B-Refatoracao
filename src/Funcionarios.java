@@ -1,13 +1,16 @@
 import java.util.Collections;
 import java.util.List;
 
-public abstract class Funcionarios implements MetodosEspeciais{
+public abstract class Funcionarios implements MetodosEspeciais{ // Classe mãe
+
+    //Atributos
     private String nome;
     private String cpf;
     private String numeroDeRegistro;
     private String orgaoDeLotacao;
     private double salario;
 
+    //Método constructor
     public Funcionarios(String nome, String cpf, String numeroDeRegistro, String orgaoDeLotacao, double salario) {
         this.nome = nome;
         this.cpf = cpf;
@@ -16,12 +19,7 @@ public abstract class Funcionarios implements MetodosEspeciais{
         this.salario = salario;
     }
 
-
-
-    /*public int aumentarSalario() {
-        return (int) (salario = this.salario * 0.1);
-    }*/
-
+    //Getters and Setters
     public String getNome() {
         return this.nome;
     }
